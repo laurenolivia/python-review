@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch
 from employee import Employee
 
-class TestEmployee(unittest.TestCase):
+class TestEmployee(unittest.TestCase):  
 
     def setUp(self):
         print('setUp')
@@ -47,6 +47,6 @@ class TestEmployee(unittest.TestCase):
 
 
 
-    if __name__ == '__main__':
-        unittest.main()            
+if __name__ == '__main__':
+    unittest.main()            
 
