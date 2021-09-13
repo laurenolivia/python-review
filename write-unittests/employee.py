@@ -11,7 +11,7 @@ class Employee:
         self.pay = pay
 
     def email(self):
-        return '{}.{}@email.com'.format(self.first, self.last)
+        return f'{self.first}.{self.last}@email.com'
 
     def fullname(self):
         return '{} {}'.format(self.first, self.last)

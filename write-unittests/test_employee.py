@@ -14,16 +14,19 @@ class TestEmployee(unittest.TestCase):
 
     def test_email(self):
         print('test_email')
-        self.assertEqual(self.emp_1.email, 'Hua.Mulan@email.com')
-        self.assertEqual(self.emp_2.email, 'J.Mascis@email.com')
+        
+        self.assertEqual(self.emp_1.email(), 'Hua.Mulan@email.com')
+        self.assertEqual(self.emp_2.email(), 'J.Mascis@email.com')
 
     def test_fullname(self):
         print('test_fullname')
-        self.assertEqual(self.emp_1.fullname, 'Hua Mulan')
-        self.assertEqual(self.emp_2.fullname, 'J Mascis')
+        
+        self.assertEqual(self.emp_1.fullname(), 'Hua Mulan')
+        self.assertEqual(self.emp_2.fullname(), 'J Mascis')
 
     def test_apply_raise(self):
         print('test_apply_raise')
+        
         self.emp_1.apply_raise()
         self.emp_2.apply_raise()
 
@@ -31,6 +34,7 @@ class TestEmployee(unittest.TestCase):
         self.assertEqual(self.emp_2.pay, 63000)
 
     def test_monthly_schedule(self):
+        print('test_monthly_schedule')
         with patch('employee.requests.get') as mocked_get:
             mocked_get.return_value.ok = True   
             mocked_get.return_value.text = 'Success'
